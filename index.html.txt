@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 19th Birthday Li ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #760c22;
+    color: #86162c;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    background: #a81735;
+    color: white;
+    font-size: 15px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #700d23;
+    transform: scale(1.05);
+}
+
+/* Welcome screen */
+
+#welcome {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: linear-gradient(145deg, #780d25, #c72d4b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome-card {
+    background: #fff1e8;
+    padding: 45px 25px;
+    border-radius: 25px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 10px 40px #3d001b66;
+}
+
+.welcome-card h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.welcome-card p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Bunny */
+
+.bunny {
+    position: relative;
+    width: 120px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.ear {
+    position: absolute;
+    width: 35px;
+    height: 95px;
+    background: white;
+    border-radius: 50%;
+    top: 0;
+}
+
+.ear::after {
+    content: "";
+    position: absolute;
+    background: #f5a5b2;
+    width: 13px;
+    height: 70px;
+    border-radius: 50%;
+    left: 11px;
+    top: 12px;
+}
+
+.left-ear {
+    left: 20px;
+    transform: rotate(-9deg);
+}
+
+.right-ear {
+    right: 20px;
+    transform: rotate(9deg);
+}
+
+.face {
+    position: absolute;
+    width: 110px;
+    height: 95px;
+    background: white;
+    border-radius: 48%;
+    bottom: 0;
+    left: 5px;
+}
+
+.eye {
+    position: absolute;
+    background: #292020;
+    width: 6px;
+    height: 9px;
+    border-radius: 50%;
+    top: 38px;
+}
+
+.eye.left {
+    left: 30px;
+}
+
+.eye.right {
+    right: 30px;
+}
+
+.nose {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #d77b87;
+    border-radius: 50%;
+    top: 57px;
+    left: 52px;
+}
+
+/* Main page */
+
+#birthday {
+    display: none;
+    min-height: 100vh;
+    padding: 30px 15px;
+    background: linear-gradient(135deg, #780d25, #bd2445);
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: #fff3eb;
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 40px #40001555;
+}
+
+h1 {
+    font-size: 42px;
+    color: #9d1533;
+}
+
+h2 {
+    color: #a81735;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #a34c5c;
+}
+
+.date {
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #e8bdbe;
+    margin: 25px 0;
+}
+
+.music-box {
+    background: #fce1df;
+    border-radius: 18px;
+    padding: 18px;
+    margin: 20px 0;
+}
+
+.music-box p {
+    font-size: 15px;
+}
+
+#player {
+    margin: 15px auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+#letter {
+    display: none;
+    text-align: left;
+    background: #fffaf5;
+    padding: 25px;
+    border-radius: 15px;
+    line-height: 1.9;
+    font-size: 16px;
+    white-space: pre-line;
+    margin-top: 25px;
+    animation: appear 1s;
+}
+
+#letter h2 {
+    text-align: center;
+}
+
+.footer {
+    margin-top: 35px;
+    font-style: italic;
+    color: #a34c5c;
+}
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ffb8c4;
+    animation: floatUp 7s linear forwards;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 500px) {
+    h1 {
+        font-size: 34px;
+    }
+
+    .container {
+        padding: 25px 17px;
+    }
+
+    #letter {
+        padding: 17px;
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME SCREEN -->
+
+<section id="welcome">
+
+    <div class="welcome-card">
+
+        <div class="bunny">
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+            <div class="face">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="nose"></div>
+            </div>
+        </div>
+
+        <p>♡ A little something for you ♡</p>
+
+        <h1>HELLO LI!</h1>
+
+        <p>
+            Someone special deserves<br>
+            something special.
+        </p>
+
+        <button onclick="startBirthday()">
+            OPEN MY SURPRISE ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN BIRTHDAY PAGE -->
+
+<section id="birthday">
+
+    <div class="container">
+
+        <div class="bunny">
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+            <div class="face">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="nose"></div>
+            </div>
+        </div>
+
+        <p>♡ Miffy's little birthday corner ♡</p>
+
+        <h1>HAPPY 19TH!</h1>
+
+        <h2>HAPPY BIRTHDAY, LI! ❤️</h2>
+
+        <p class="date">
+            FRIDAY • NOVEMBER 6, 2026
+        </p>
+
+        <p class="subtitle">
+            A little surprise made just for you.
+        </p>
+
+        <hr class="divider">
+
+        <p>
+            Welcome to your special day, Li!
+            I hope this little website makes you smile.
+            You deserve all the happiness in the world. ♡
+        </p>
+
+
+        <!-- MUSIC -->
+
+        <div class="music-box">
+
+            <h2>🎵 A SONG FOR YOU</h2>
+
+            <p>
+                Now playing (or ready to play):
+                <br>
+                <strong>Mundo - IV OF SPADES</strong>
+            </p>
+
+            <div id="player"></div>
+
+            <button id="musicButton" onclick="toggleMusic()">
+                ♫ PLAY MUSIC
+            </button>
+
+            <p style="font-size:12px;">
+                A little soundtrack for your special day. ❤️
+            </p>
+
+        </div>
+
+        <hr class="divider">
+
+        <h2>🎁 YOUR LITTLE GIFT</h2>
+
+        <p>
+            There's something inside this gift
+            that I want you to read.
+        </p>
+
+        <button onclick="openGift()" id="giftButton">
+            OPEN YOUR GIFT 🎀
+        </button>
+
+
+        <!-- PERSONAL LETTER -->
+
+        <div id="letter">
+
+            <h2>💌 A LETTER FOR LI</h2>
+
+            Hello Li!! Happy 19th Birthday!! ❤️🎀
+
+            Finally, you're 19! I hope today reminds you how special and appreciated you are. I wish you nothing but happiness, good health, genuine people, and beautiful memories as you enter another chapter of your life.
+
+            I know how much you love studying and how dedicated you are when it comes to school. I hope you never lose that passion and determination. Keep chasing your dreams, keep learning, and keep doing your best. I know there will be days when things get difficult, when school gets stressful, and when you feel tired, but always remember that progress takes time. Don't be too hard on yourself. You don't have to figure everything out all at once. Just keep moving forward, one step at a time. I hope you achieve all the things you've been working so hard for.
+
+            And please, Li, HAHAHA, I know sometimes you drink energy drinks just to keep yourself awake when studying, especially when you have a lot to finish. But please don't forget to drink water too! Don't push yourself too hard just to get everything done. Take breaks when you need them, get enough sleep, and remember that your health is more important than any deadline or school requirement. You can always continue studying tomorrow. Your dreams are important, but so is taking care of the person who's working hard to achieve them. ❤️
+
+            Also, never forget how beautiful you are, inside and out. Don't let stressful days, bad experiences, or other people's opinions make you question your worth. You are beautiful, capable, and deserving of all the good things coming your way. I hope you continue to see the beauty in yourself just as much as other people can see it in you.
+
+            As you turn 19, I hope life gives you more reasons to smile, more opportunities to grow, and more moments worth remembering. May you become stronger, wiser, and happier. I hope you never stop believing in yourself and never settle for less than what you deserve.
+
+            Enjoy your day, Li! Eat your favorite food, smile a little more, and don't think too much about school today. You deserve a break too! HAHAHA.
+
+            Once again, HAPPY 19TH BIRTHDAY, LI!! ❤️🐰
+
+            Stay happy, stay beautiful, and please drink your water!!
+
+            Here's to more achievements, unforgettable memories, and wonderful chapters ahead. 🎂
+
+            <hr class="divider">
+
+            <h2>♡ HAPPY BIRTHDAY, LI! ♡</h2>
+
+            <p style="text-align:center;">
+                Made with love. ❤️
+            </p>
+
+        </div>
+
+        <div class="footer">
+            Made especially for Li ♡
+            <br>
+            🐰 ❤️ 🎀
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- YOUTUBE PLAYER API -->
+
+<script>
+let player;
+let playerReady = false;
+let musicStarted = false;
+
+function onYouTubeIframeAPIReady() {
+
+    player = new YT.Player('player', {
+
+        height: '200',
+        width: '200',
+
+        videoId: 'omFa4Yk9Fmg',
+
+        playerVars: {
+            autoplay: 0,
+            controls: 1,
+            playsinline: 1,
+            rel: 0
+        },
+
+        events: {
+
+            onReady: function() {
+                playerReady = true;
+            }
+
+        }
+
+    });
+}
+
+
+// Start birthday website
+
+function startBirthday() {
+
+    document.getElementById('welcome').style.display = 'none';
+
+    document.getElementById('birthday').style.display = 'block';
+
+    window.scrollTo(0, 0);
+
+    musicStarted = true;
+
+    if (playerReady) {
+        player.unMute();
+        player.setVolume(70);
+        player.playVideo();
+    }
+
+    document.getElementById('musicButton').innerText =
+        '♫ MUTE MUSIC';
+
+    startHearts();
+}
+
+
+// Music toggle
+
+function toggleMusic() {
+
+    if (!playerReady) {
+        alert("Music is still loading. Please try again!");
+        return;
+    }
+
+    if (player.isMuted()) {
+
+        player.unMute();
+        player.playVideo();
+
+        document.getElementById('musicButton').innerText =
+            '♫ MUTE MUSIC';
+
+    } else {
+
+        player.mute();
+
+        document.getElementById('musicButton').innerText =
+            '♫ UNMUTE MUSIC';
+    }
+}
+
+
+// Gift button
+
+function openGift() {
+
+    let letter = document.getElementById('letter');
+    let button = document.getElementById('giftButton');
+
+    if (letter.style.display === 'block') {
+
+        letter.style.display = 'none';
+        button.innerText = 'OPEN YOUR GIFT 🎀';
+
+    } else {
+
+        letter.style.display = 'block';
+        button.innerText = 'CLOSE YOUR LETTER ♡';
+
+        letter.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        startHearts();
+    }
+}
+
+
+// Floating hearts
+
+function startHearts() {
+
+    for (let i = 0; i < 8; i++) {
+
+        setTimeout(() => {
+
+            let heart = document.createElement('div');
+
+            heart.className = 'heart';
+            heart.innerHTML = '♥';
+
+            heart.style.left =
+                Math.random() * 100 + 'vw';
+
+            heart.style.fontSize =
+                (15 + Math.random() * 25) + 'px';
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+
+        }, i * 250);
+
+    }
+
+}
+
+
+// Load YouTube API
+
+let tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+
+document.body.appendChild(tag);
+
+</script>
+
+</body>
+</html>
